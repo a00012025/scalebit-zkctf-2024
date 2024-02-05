@@ -6,7 +6,7 @@ template Multiplier() {
     signal input c;
     signal output d;
 
-    d <== (-3 * a) * (2 * a + 4) + 12 + 6 * b;
+    d === (b * 5) * (a * 18 + b * 2);
 }
 
 component main = Multiplier();
