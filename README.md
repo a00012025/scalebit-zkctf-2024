@@ -71,13 +71,13 @@ The condition to pass step 2 is that, we need to post at least 20 points to the 
 
 When calling `mint`  function, the contract will ensure that `P(i) = value` with the given KZG commitment `comm(P)` , and it’s a standard implementation so we must act honestly when providing these values. Which means anyway we need to generate a polynomial (with degree ≤ 16) and evaluate it on `i = 1~20`  honestly to pass the verification.
 
-The vulnerability is in `verifySoulBox()` , we can see that it performs following check on `comm(P)` , `proof` , `soulBox` **:
+The vulnerability is in `verifySoulBox()` , we can see that it performs following check on `comm(P)` , `proof` , `soulBox`:
 
 ```solidity
 e(comm(P) - soulBox, G2.g) * e(-proof, τ * G2.g) == 1
 ```
 
-Where `τ`  is secret from KZG commitment (`_index`  = 0 so `index * proof` ** is omitted). It doesn’t verify that whether caller knows the discrete log of `soulBox` , so we can provide a value that we don’t know the private key.
+Where `τ`  is secret from KZG commitment (`_index`  = 0 so `index * proof` is omitted). It doesn’t verify that whether caller knows the discrete log of `soulBox` , so we can provide a value that we don’t know the private key.
 
 We want the forged values satisfy: `τ * proof = comm(P) - soulBox` , so just setting `soulBox = comm(P) - τ * G1.g`  and `proof = G1.g`, which can pass the verification.
 
