@@ -5,7 +5,6 @@ out/
 # Ignores development broadcast logs
 !/broadcast
 /broadcast/*/31337/
-/broadcast/*/19875/
 /broadcast/**/dry-run/
 
 # Docs
@@ -13,8 +12,3 @@ docs/
 
 # Dotenv file
 .env
-
-
-# Added by cargo
-target
-output

@@ -1,0 +1,693 @@
+[
+  {
+    "type": "function",
+    "name": "SRS_G1_X",
+    "inputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "SRS_G1_Y",
+    "inputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "SRS_G2_X_0",
+    "inputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "SRS_G2_X_1",
+    "inputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "SRS_G2_Y_0",
+    "inputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "SRS_G2_Y_1",
+    "inputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "commit",
+    "inputs": [
+      {
+        "name": "coefficients",
+        "type": "uint256[]",
+        "internalType": "uint256[]"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple",
+        "internalType": "struct Pairing.G1Point",
+        "components": [
+          {
+            "name": "X",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "Y",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "deposits",
+    "inputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "registered",
+        "type": "bool",
+        "internalType": "bool"
+      },
+      {
+        "name": "nonce",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "commitment",
+        "type": "tuple",
+        "internalType": "struct Pairing.G1Point",
+        "components": [
+          {
+            "name": "X",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "Y",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      },
+      {
+        "name": "publicKey",
+        "type": "tuple",
+        "internalType": "struct Pairing.G1Point",
+        "components": [
+          {
+            "name": "X",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "Y",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      },
+      {
+        "name": "escaped0",
+        "type": "bool",
+        "internalType": "bool"
+      },
+      {
+        "name": "escaped1",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "evalPolyAt",
+    "inputs": [
+      {
+        "name": "_coefficients",
+        "type": "uint256[]",
+        "internalType": "uint256[]"
+      },
+      {
+        "name": "_index",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "pure"
+  },
+  {
+    "type": "function",
+    "name": "evaluateBarycentricPolynomial",
+    "inputs": [
+      {
+        "name": "x",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "yValues",
+        "type": "uint256[]",
+        "internalType": "uint256[]"
+      },
+      {
+        "name": "weights",
+        "type": "uint256[]",
+        "internalType": "uint256[]"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getBarycentricWeights",
+    "inputs": [
+      {
+        "name": "xValues",
+        "type": "uint256[]",
+        "internalType": "uint256[]"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256[]",
+        "internalType": "uint256[]"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getCollectedY",
+    "inputs": [
+      {
+        "name": "user",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256[]",
+        "internalType": "uint256[]"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getNonce",
+    "inputs": [
+      {
+        "name": "_user",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "mint",
+    "inputs": [
+      {
+        "name": "_proof",
+        "type": "tuple",
+        "internalType": "struct Pairing.G1Point",
+        "components": [
+          {
+            "name": "X",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "Y",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      },
+      {
+        "name": "_value",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "register",
+    "inputs": [
+      {
+        "name": "_commitment",
+        "type": "tuple",
+        "internalType": "struct Pairing.G1Point",
+        "components": [
+          {
+            "name": "X",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "Y",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      },
+      {
+        "name": "_proof",
+        "type": "tuple",
+        "internalType": "struct Pairing.G1Point",
+        "components": [
+          {
+            "name": "X",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "Y",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      },
+      {
+        "name": "_publicKey",
+        "type": "tuple",
+        "internalType": "struct Pairing.G1Point",
+        "components": [
+          {
+            "name": "X",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "Y",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "payable"
+  },
+  {
+    "type": "function",
+    "name": "replay",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "verify",
+    "inputs": [
+      {
+        "name": "_commitment",
+        "type": "tuple",
+        "internalType": "struct Pairing.G1Point",
+        "components": [
+          {
+            "name": "X",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "Y",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      },
+      {
+        "name": "_proof",
+        "type": "tuple",
+        "internalType": "struct Pairing.G1Point",
+        "components": [
+          {
+            "name": "X",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "Y",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      },
+      {
+        "name": "_index",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "_value",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "verifyMulti",
+    "inputs": [
+      {
+        "name": "_commitment",
+        "type": "tuple",
+        "internalType": "struct Pairing.G1Point",
+        "components": [
+          {
+            "name": "X",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "Y",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      },
+      {
+        "name": "_proof",
+        "type": "tuple",
+        "internalType": "struct Pairing.G2Point",
+        "components": [
+          {
+            "name": "X",
+            "type": "uint256[2]",
+            "internalType": "uint256[2]"
+          },
+          {
+            "name": "Y",
+            "type": "uint256[2]",
+            "internalType": "uint256[2]"
+          }
+        ]
+      },
+      {
+        "name": "_indices",
+        "type": "uint256[]",
+        "internalType": "uint256[]"
+      },
+      {
+        "name": "_values",
+        "type": "uint256[]",
+        "internalType": "uint256[]"
+      },
+      {
+        "name": "_iCoeffs",
+        "type": "uint256[]",
+        "internalType": "uint256[]"
+      },
+      {
+        "name": "_zCoeffs",
+        "type": "uint256[]",
+        "internalType": "uint256[]"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "verifyPublicKey",
+    "inputs": [
+      {
+        "name": "_commitment",
+        "type": "tuple",
+        "internalType": "struct Pairing.G1Point",
+        "components": [
+          {
+            "name": "X",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "Y",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      },
+      {
+        "name": "_proof",
+        "type": "tuple",
+        "internalType": "struct Pairing.G1Point",
+        "components": [
+          {
+            "name": "X",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "Y",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      },
+      {
+        "name": "_publicKey",
+        "type": "tuple",
+        "internalType": "struct Pairing.G1Point",
+        "components": [
+          {
+            "name": "X",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "Y",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "event",
+    "name": "Deposit",
+    "inputs": [
+      {
+        "name": "publicKey",
+        "type": "tuple",
+        "indexed": true,
+        "internalType": "struct Pairing.G1Point",
+        "components": [
+          {
+            "name": "X",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "Y",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      },
+      {
+        "name": "commitment",
+        "type": "tuple",
+        "indexed": false,
+        "internalType": "struct Pairing.G1Point",
+        "components": [
+          {
+            "name": "X",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "Y",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      },
+      {
+        "name": "timestamp",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "Minted",
+    "inputs": [
+      {
+        "name": "user",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "nonce",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "Pwned",
+    "inputs": [
+      {
+        "name": "privateKey",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  }
+]
